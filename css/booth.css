@@ -1,0 +1,69 @@
+/* =========================================================
+   HOTMESS PASS® — photo booth
+   ========================================================= */
+.bt {
+  position: relative; min-height: 100vh; overflow: hidden; padding: calc(var(--hdr-h) + 6px) var(--gutter) 90px; color: var(--paper);
+  background:
+    repeating-linear-gradient(90deg, rgba(0,0,0,.35) 0 6px, rgba(255,255,255,.04) 6px 18px, rgba(0,0,0,.3) 18px 30px),
+    linear-gradient(180deg, #5a0710, #2a0306 70%, #170203);
+}
+/* velvet curtains that open on load */
+.curtain { position: absolute; top: 0; bottom: 0; z-index: 30; width: 51%; pointer-events: none;
+  background: repeating-linear-gradient(90deg, #6d0812 0 14px, #9d1424 14px 26px, #4c040b 26px 40px), #6d0812;
+  box-shadow: inset 0 -60px 80px rgba(0,0,0,.6); }
+.cl-l { left: 0; transform-origin: 0 0; }
+.cl-r { right: 0; transform-origin: 100% 0; }
+.curtain::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 18px; background: repeating-linear-gradient(90deg, #d4a640 0 6px, #8a6420 6px 10px); }
+
+.bt-head { position: relative; z-index: 2; }
+.bt-mast { margin: 0; font-family: var(--display); font-weight: 400; font-size: clamp(90px, 17vw, 290px); line-height: .78; letter-spacing: -.012em; color: #ffd9e6; text-shadow: 0 0 40px rgba(255, 63, 164, .35); }
+.bt-mast .ch { display: inline-block; }
+.bt-sub { margin: 12px 0 0; }
+.bt-sub .hand { font-size: 26px; text-transform: none; color: var(--hot); }
+
+.bt-grid { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(260px, .6fr); gap: clamp(30px, 5vw, 80px); margin-top: clamp(30px, 4vw, 50px); align-items: start; }
+
+/* the machine */
+.machine { padding: 18px; border-radius: 22px; background: linear-gradient(180deg, #e9e4da, #c9c1b3); color: var(--ink); box-shadow: inset 0 2px 0 #fff, 0 40px 80px -20px rgba(0,0,0,.8); }
+.mc-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-weight: 700; }
+.mc-led { padding: 4px 10px; background: #120606; color: #ff2a1f; font-family: "Silkscreen", var(--mono); font-size: 11px; text-shadow: 0 0 8px rgba(255,42,31,.8); }
+.mc-screen { position: relative; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 12px; background: #0b0b0b; box-shadow: inset 0 0 0 8px #1b1b1b, inset 0 0 40px rgba(0,0,0,.9); }
+.mc-screen video, .mc-screen canvas { position: absolute; inset: 8px; width: calc(100% - 16px); height: calc(100% - 16px); object-fit: cover; border-radius: 6px; }
+.mc-screen video { opacity: 0; }
+.mc-off { position: absolute; inset: 0; z-index: 3; display: grid; place-content: center; justify-items: center; gap: 12px; text-align: center; color: var(--paper); }
+.mc-off .hand { margin: 0; font-size: 30px; }
+.mc-btn { height: 46px; padding: 0 20px; border: 0; border-radius: 999px; background: var(--hot); color: var(--ink); font-weight: 700; }
+.mc-link { border: 0; background: none; color: var(--paper); text-decoration: underline; opacity: .8; }
+.mc-count { position: absolute; inset: 0; z-index: 4; display: grid; place-items: center; pointer-events: none; font-family: var(--display); font-size: clamp(120px, 16vw, 240px); color: #fff; text-shadow: 0 0 30px rgba(255,63,164,.9); }
+.mc-flash { position: absolute; inset: 0; z-index: 5; background: #fff; opacity: 0; pointer-events: none; }
+.mc-pose { position: absolute; z-index: 4; left: 18px; top: 16px; color: #fff; text-shadow: 0 1px 3px #000; }
+.mc-panel { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 16px; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.flt { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 14px; border: 0; border-radius: 10px; background: #f6f2ea; font-family: var(--mono); font-size: 11px; font-weight: 700; text-transform: uppercase; box-shadow: 0 4px 0 #9d9483; transition: transform .1s, box-shadow .1s; }
+.flt i { width: 10px; height: 10px; border-radius: 50%; background: #bbb; }
+.flt.is-on { transform: translateY(3px); box-shadow: 0 1px 0 #9d9483; }
+.flt.is-on i { background: var(--hot); box-shadow: 0 0 8px var(--hot); }
+.shoot { flex: none; width: 110px; height: 110px; border: 0; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #ff6b5f, var(--red) 55%, #8a0f08); color: #fff; font-family: var(--display); font-size: 26px; box-shadow: 0 8px 0 #5a0904, 0 16px 24px rgba(0,0,0,.4); transition: transform .1s, box-shadow .1s; }
+.shoot:active:not(:disabled) { transform: translateY(6px); box-shadow: 0 2px 0 #5a0904; }
+.shoot:disabled { filter: grayscale(.8) brightness(.8); cursor: not-allowed; }
+.mc-film { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 16px; }
+.mc-film i { aspect-ratio: 4 / 3; border-radius: 4px; background: #2a2626 center / cover; box-shadow: inset 0 0 0 1px rgba(0,0,0,.3); }
+
+/* the output slot */
+.out { display: grid; justify-items: center; }
+.out-k { margin: 0 0 10px; opacity: .7; }
+.out-slot { width: 100%; max-width: 320px; height: 14px; border-radius: 8px; background: #050505; box-shadow: inset 0 3px 4px #000, 0 1px 0 rgba(255,255,255,.15); }
+.out-strip { position: relative; width: min(280px, 100%); margin-top: -6px; overflow: hidden; }
+.out-strip img { display: block; width: 100%; height: auto; box-shadow: 0 30px 40px -20px rgba(0,0,0,.8); }
+.out-empty { margin: 30px 0; text-align: center; font-size: 30px; line-height: 1; opacity: .8; }
+.out-actions { display: flex; gap: 8px; margin-top: 18px; }
+.ob { height: 46px; padding: 0 18px; border: 2px solid var(--paper); border-radius: 999px; background: none; color: var(--paper); font-weight: 700; }
+.ob:hover { background: var(--paper); color: var(--ink); }
+.ob-hot { background: var(--hot); border-color: var(--hot); color: var(--ink); }
+.bt-note { position: relative; z-index: 2; margin: 40px 0 0; font-size: 28px; line-height: 1; color: #ffd9e6; opacity: .8; rotate: -2deg; }
+
+@media (max-width: 900px) {
+  .bt-grid { grid-template-columns: 1fr; }
+  .mc-panel { flex-direction: column; align-items: stretch; }
+  .shoot { align-self: center; }
+}
