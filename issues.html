@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Issues — HOTMESS PASS®</title>
+  <meta name="description" content="Every issue of HOTMESS, from −5 to 00. We started counting backwards.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter+Tight:ital,wght@0,400;0,500;0,700;0,800;0,900;1,500;1,800&family=Instrument+Serif:ital@0;1&family=Pinyon+Script&family=Reenie+Beanie&family=Sedgwick+Ave+Display&family=Silkscreen&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/core.css">
+  <link rel="stylesheet" href="css/issues.css">
+</head>
+<body data-page="issues">
+
+  <!-- ═════════════ HEADER ═════════════ -->
+  <header class="hdr" id="hdr">
+    <a href="index.html" class="hdr-logo">HOTMESS PASS<sup>®</sup></a>
+    <nav class="hdr-nav" aria-label="Main">
+      <a href="index.html"><i>01</i>home</a>
+      <a href="apply.html"><i>02</i>apply</a>
+      <a href="scan.html"><i>03</i>scanner</a>
+      <a href="issues.html" class="is-active" aria-current="page"><i>04</i>issues</a>
+      <a href="registry.html"><i>05</i>registry</a>
+      <a href="fine-print.html"><i>06</i>fine print</a>
+      <a href="booth.html"><i>07</i>photo booth</a>
+    </nav>
+    <div class="hdr-right mono">
+      <span id="clock">03:12:00 AM</span>
+      <button class="hdr-index" id="burger" aria-label="Open index" aria-expanded="false">index <b>+</b></button>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" aria-hidden="true">
+    <a href="index.html"><i>p.01</i>home</a>
+    <a href="apply.html"><i>p.02</i>apply</a>
+    <a href="scan.html"><i>p.03</i>scanner</a>
+    <a href="issues.html"><i>p.04</i>issues</a>
+    <a href="registry.html"><i>p.05</i>registry</a>
+    <a href="fine-print.html"><i>p.06</i>fine print</a>
+    <a href="booth.html"><i>p.07</i>photo booth</a>
+    <p class="menu-foot mono">HOTMESS PASS® · issue 00 · the identity issue</p>
+  </div>
+
+  <main id="top">
+
+    <!-- ═══════════════════════════════════════════════
+         01 · THE PILE
+         ═══════════════════════════════════════════════ -->
+    <section class="pile-sec" id="pile">
+      <h1 class="is-mast" aria-label="Issues."><span id="isMast">ISSUES.</span></h1>
+      <div class="is-row"><span>SIX ISSUES.</span><span>WE STARTED COUNTING BACKWARDS.</span></div>
+      <div class="pile" id="pileBox" aria-label="A messy pile of magazines you can drag"></div>
+      <p class="pile-note hand">dig through the pile ↑<br>(nobody tidies up here)</p>
+      <div class="pile-meta mono"><span>BEI PUBLISHING</span><span>PRINT RUN: 1</span><span>PRICE: €0.00</span><span>RETURNS: NEVER</span></div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         02 · THE RACK (coverflow)
+         ═══════════════════════════════════════════════ -->
+    <section class="rack" id="rack">
+      <div class="rack-in" id="rackIn">
+        <p class="rack-k mono">the rack · scroll, drag or use ← →</p>
+        <div class="flow" id="flow" aria-roledescription="carousel"></div>
+        <div class="rack-info" aria-live="polite">
+          <span class="ri-n" id="riN">00</span>
+          <div class="ri-txt">
+            <p class="ri-title" id="riTitle">THE IDENTITY ISSUE</p>
+            <p class="ri-sub mono" id="riSub">current issue</p>
+          </div>
+          <button type="button" class="ri-read" id="riRead" data-cursor="open">read it →</button>
+        </div>
+        <div class="rack-dots" id="rackDots" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         03 · SUBSCRIBE (sort of)
+         ═══════════════════════════════════════════════ -->
+    <section class="sub torn-top" id="sub" style="--torn:var(--hot)">
+      <p class="sub-k mono">subscriptions</p>
+      <h2 class="sub-title">we don't do<br><em class="serif">subscriptions.</em></h2>
+      <p class="sub-lead">you can't subscribe to a feeling. you just get it, monthly, without asking. next issue: <b>01</b>, whenever someone finally texts back.</p>
+      <a href="apply.html" class="sub-btn mono">get a pass instead →</a>
+    </section>
+
+  </main>
+
+  <!-- ═════════════ READER ═════════════ -->
+  <div class="reader" id="reader" role="dialog" aria-modal="true" aria-label="Magazine reader" aria-hidden="true">
+    <div class="rd-top mono">
+      <span id="rdTitle">HOTMESS · ISSUE 00</span>
+      <span id="rdPage">cover</span>
+      <button type="button" class="rd-close" id="rdClose" aria-label="Close the magazine">close ✕</button>
+    </div>
+    <div class="rd-stage" id="rdStage">
+      <div class="book" id="book"></div>
+    </div>
+    <div class="rd-ctrl mono">
+      <button type="button" id="rdPrev" aria-label="Previous page">← prev</button>
+      <span class="rd-hint">click the pages · ← → keys</span>
+      <button type="button" id="rdNext" aria-label="Next page">next →</button>
+    </div>
+  </div>
+
+  <!-- ═════════════ FOOTER ═════════════ -->
+  <footer class="ft">
+    <div class="ft-mq" aria-hidden="true">
+      <div class="mq-track" data-speed="-.6"><span>HOTMESS PASS ✦ HOTMESS PASS ✦ </span><span>HOTMESS PASS ✦ HOTMESS PASS ✦ </span></div>
+    </div>
+    <div class="ft-grid">
+      <div class="ft-col">
+        <p class="mono ft-h">the bureau</p>
+        <p>Bureau of Emotional Identity<br>Terminal 03, Floor −1<br>open 24/7, mostly at night<br><a href="#" data-call="333-333-333" class="ft-call">☎ 333-333-333</a></p>
+      </div>
+      <div class="ft-col">
+        <p class="mono ft-h">pages</p>
+        <a href="index.html">home</a><a href="apply.html">apply</a><a href="scan.html">scanner</a><a href="issues.html">issues</a><a href="registry.html">registry</a><a href="fine-print.html">fine print</a><a href="booth.html">photo booth</a>
+      </div>
+      <div class="ft-code">
+        <svg class="barcode" data-code="U ARE THE PRODUCT" data-h="60" data-w="1.6" data-bg="#ecebe6" aria-label="Barcode: U ARE THE PRODUCT"></svg>
+        <p class="mono">not a real document. a real feeling.</p>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <p class="ft-sign">concept, design &amp; code by <span class="script">ghostly.grl</span> ♥</p>
+      <p class="mono">© 2026 HOTMESS PASS® · all feelings reserved</p>
+      <a href="#top" class="mono ft-top" data-scrollto>back to the top ↑</a>
+    </div>
+  </footer>
+
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"><span class="cursor-ring"></span><span class="cursor-label" id="cursorLabel"></span></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsbarcode/3.11.6/JsBarcode.all.min.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/eggs.js"></script>
+  <script src="js/issues.js"></script>
+</body>
+</html>

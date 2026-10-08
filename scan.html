@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scanner — HOTMESS PASS®</title>
+  <meta name="description" content="Scan yourself. Point the camera at any barcode and the Bureau of Emotional Identity prints a verdict.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter+Tight:ital,wght@0,400;0,500;0,700;0,800;0,900;1,500;1,800&family=Instrument+Serif:ital@0;1&family=Pinyon+Script&family=Reenie+Beanie&family=Sedgwick+Ave+Display&family=Silkscreen&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/core.css">
+  <link rel="stylesheet" href="css/scan.css">
+</head>
+<body data-page="scan">
+
+  <!-- ═════════════ HEADER ═════════════ -->
+  <header class="hdr" id="hdr">
+    <a href="index.html" class="hdr-logo">HOTMESS PASS<sup>®</sup></a>
+    <nav class="hdr-nav" aria-label="Main">
+      <a href="index.html"><i>01</i>home</a>
+      <a href="apply.html"><i>02</i>apply</a>
+      <a href="scan.html" class="is-active" aria-current="page"><i>03</i>scanner</a>
+      <a href="issues.html"><i>04</i>issues</a>
+      <a href="registry.html"><i>05</i>registry</a>
+      <a href="fine-print.html"><i>06</i>fine print</a>
+      <a href="booth.html"><i>07</i>photo booth</a>
+    </nav>
+    <div class="hdr-right mono">
+      <span id="clock">03:12:00 AM</span>
+      <button class="hdr-index" id="burger" aria-label="Open index" aria-expanded="false">index <b>+</b></button>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" aria-hidden="true">
+    <a href="index.html"><i>p.01</i>home</a>
+    <a href="apply.html"><i>p.02</i>apply</a>
+    <a href="scan.html"><i>p.03</i>scanner</a>
+    <a href="issues.html"><i>p.04</i>issues</a>
+    <a href="registry.html"><i>p.05</i>registry</a>
+    <a href="fine-print.html"><i>p.06</i>fine print</a>
+    <a href="booth.html"><i>p.07</i>photo booth</a>
+    <p class="menu-foot mono">HOTMESS PASS® · issue 00 · the identity issue</p>
+  </div>
+
+  <main id="top">
+
+    <!-- ═══════════════════════════════════════════════
+         01 · THE SCANNER
+         ═══════════════════════════════════════════════ -->
+    <section class="sc" id="scanner">
+      <h1 class="sc-title" aria-label="Scan yourself"><span class="sc-big" id="scBig">SCAN</span><em class="serif">yourself.</em></h1>
+      <p class="sc-lead mono">point the camera at any barcode. your pass, a magazine, a bag of chips. the bureau will print a verdict.</p>
+
+      <div class="sc-grid">
+        <!-- viewfinder -->
+        <div class="vf" id="vf">
+          <div class="slot fill" data-img="img/SCAN/mirror.jpg" data-pos="42% 40%" data-alt="Blonde girl with face gems holding up a pink digital camera, flash-lit">
+            <span class="slot-label">mirror.jpg<small>mirror selfie, phone over face · any ratio</small></span>
+          </div>
+          <video id="video" playsinline muted aria-label="Camera preview"></video>
+          <canvas id="freeze" aria-hidden="true"></canvas>
+          <div class="vf-hud mono" aria-hidden="true">
+            <span class="hud-rec"><i></i>REC <b id="recTime">00:00:00</b></span>
+            <span class="hud-tr">ISO 3200 · F/1.8 · AF</span>
+            <span class="hud-bl" id="hudMode">MODE: IDLE</span>
+            <span class="hud-br">T-03 · BEI</span>
+            <span class="hud-grid"></span>
+          </div>
+          <div class="vf-box" aria-hidden="true"><i></i><i></i><i></i><i></i><span class="vf-laser"></span></div>
+          <div class="vf-flash" id="flash" aria-hidden="true"></div>
+          <p class="vf-msg mono" id="vfMsg" aria-live="polite">&gt; scanner idle</p>
+        </div>
+
+        <!-- controls + printer -->
+        <div class="side">
+          <div class="ctrls">
+            <button type="button" class="ctrl ctrl-rec" id="camBtn" data-cursor="open"><i></i><span>open camera</span></button>
+            <label class="ctrl" data-cursor="upload"><span>upload a photo</span><input type="file" id="fileIn" accept="image/*"></label>
+            <form class="ctrl-type" id="typeForm" autocomplete="off">
+              <label for="typeIn" class="mono">or type what the code says</label>
+              <div><input id="typeIn" class="mono" maxlength="48" placeholder="e.g. U ARE THE PRODUCT"><button type="submit" class="mono">scan</button></div>
+            </form>
+          </div>
+
+          <div class="printer" id="printer">
+            <div class="printer-top mono"><span>THERMAL PRINTER · T-03</span><i class="led" id="led"></i></div>
+            <div class="printer-slot"></div>
+            <div class="receipt-wrap">
+              <div class="receipt" id="receipt" aria-live="polite">
+                <p class="rc-empty mono">no receipt yet.<br>scan something. anything.<br>(you, ideally)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         02 · THINGS TO SCAN
+         ═══════════════════════════════════════════════ -->
+    <section class="things torn-top" id="things" style="--torn:var(--paper)">
+      <div class="th-head">
+        <h2 class="th-title">things to <em class="serif">scan</em></h2>
+        <p class="mono th-sub">open this page on your phone and point it at the screen, or tap “scan from here”.</p>
+      </div>
+      <div class="th-board">
+        <article class="th-item" style="--r:-4deg">
+          <span class="tape" style="--r:-8deg; top:-14px; left:30%"></span>
+          <p class="th-k mono">exhibit a</p>
+          <div class="th-yatp">
+            <b>YOU</b><span>ARE THE</span>
+            <svg class="barcode" data-code="U ARE THE PRODUCT" data-h="90" data-w="2" aria-label="Barcode: U ARE THE PRODUCT"></svg>
+            <b class="th-prod">PRODUCT</b>
+          </div>
+          <button type="button" class="th-btn mono" data-scan="U ARE THE PRODUCT">scan from here →</button>
+        </article>
+
+        <article class="th-item th-pass" style="--r:3deg">
+          <span class="tape" style="--r:6deg; top:-14px; left:20%"></span>
+          <p class="th-k mono">exhibit b · a ticket from window 3</p>
+          <div class="th-ticket">
+            <span class="mono">bureau of emotional identity</span>
+            <b>0666</b>
+            <span class="mono">please wait to be processed</span>
+            <svg class="barcode" id="ticketCode" data-code="HM-0666" data-h="60" data-w="1.8" aria-label="Barcode: HM-0666"></svg>
+          </div>
+          <button type="button" class="th-btn mono" data-scan="HM-0666">scan from here →</button>
+        </article>
+
+        <article class="th-item" style="--r:-2deg">
+          <span class="tape" style="--r:10deg; top:-14px; right:24%"></span>
+          <p class="th-k mono">exhibit c</p>
+          <div class="th-mag">
+            <span class="th-mast">HOTMESS</span>
+            <span class="mono">issue 00 · the identity issue</span>
+            <svg class="barcode" data-code="ISSUE 00" data-h="60" data-w="2" aria-label="Barcode: ISSUE 00"></svg>
+          </div>
+          <button type="button" class="th-btn mono" data-scan="ISSUE 00">scan from here →</button>
+        </article>
+      </div>
+
+      <div class="history">
+        <p class="mono th-k">scan log (this device)</p>
+        <ol class="hist" id="hist"><li class="mono hist-empty">nothing scanned yet.</li></ol>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═════════════ FOOTER ═════════════ -->
+  <footer class="ft">
+    <div class="ft-mq" aria-hidden="true">
+      <div class="mq-track" data-speed="-.6"><span>HOTMESS PASS ✦ HOTMESS PASS ✦ </span><span>HOTMESS PASS ✦ HOTMESS PASS ✦ </span></div>
+    </div>
+    <div class="ft-grid">
+      <div class="ft-col">
+        <p class="mono ft-h">the bureau</p>
+        <p>Bureau of Emotional Identity<br>Terminal 03, Floor −1<br>open 24/7, mostly at night<br><a href="#" data-call="333-333-333" class="ft-call">☎ 333-333-333</a></p>
+      </div>
+      <div class="ft-col">
+        <p class="mono ft-h">pages</p>
+        <a href="index.html">home</a><a href="apply.html">apply</a><a href="scan.html">scanner</a><a href="issues.html">issues</a><a href="registry.html">registry</a><a href="fine-print.html">fine print</a><a href="booth.html">photo booth</a>
+      </div>
+      <div class="ft-code">
+        <svg class="barcode" data-code="U ARE THE PRODUCT" data-h="60" data-w="1.6" data-bg="#ecebe6" aria-label="Barcode: U ARE THE PRODUCT"></svg>
+        <p class="mono">not a real document. a real feeling.</p>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <p class="ft-sign">concept, design &amp; code by <span class="script">ghostly.grl</span> ♥</p>
+      <p class="mono">© 2026 HOTMESS PASS® · all feelings reserved</p>
+      <a href="#top" class="mono ft-top" data-scrollto>back to the top ↑</a>
+    </div>
+  </footer>
+
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"><span class="cursor-ring"></span><span class="cursor-label" id="cursorLabel"></span></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsbarcode/3.11.6/JsBarcode.all.min.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/eggs.js"></script>
+  <script src="js/scan.js"></script>
+</body>
+</html>

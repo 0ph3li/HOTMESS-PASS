@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HOTMESS PASS® — Issue 00: The Identity Issue</title>
+  <meta name="description" content="HOTMESS PASS — a magazine that issues emotional identity documents. Issue 00: the identity issue.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter+Tight:ital,wght@0,400;0,500;0,700;0,800;0,900;1,500;1,800&family=Instrument+Serif:ital@0;1&family=Pinyon+Script&family=Reenie+Beanie&family=Sedgwick+Ave+Display&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/core.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body class="is-loading" data-page="home">
+
+  <!-- ═════════════ LOADER · identity check ═════════════ -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-top mono">
+      <span>BUREAU OF EMOTIONAL IDENTITY</span>
+      <span>TERMINAL 03 · <b id="ldTime">03:12</b></span>
+    </div>
+    <div class="loader-mid">
+      <div class="ld-bars" id="ldBars"></div>
+      <p class="ld-status mono"><span id="ldMsg">VERIFYING SUBJECT</span> <b id="ldPct">00</b>%</p>
+    </div>
+    <div class="loader-bot mono">
+      <span>please do not move. please do not cry on the scanner.</span>
+      <span class="blink">● REC</span>
+    </div>
+    <div class="ld-granted" id="ldGranted"><span>ACCESS</span><span>GRANTED*</span><small class="mono">*barely</small></div>
+    <div class="ld-strips" id="ldStrips"></div>
+  </div>
+
+  <!-- ═════════════ HEADER ═════════════ -->
+  <header class="hdr" id="hdr">
+    <a href="index.html" class="hdr-logo">HOTMESS PASS<sup>®</sup></a>
+    <nav class="hdr-nav" aria-label="Main">
+      <a href="index.html" class="is-active" aria-current="page"><i>01</i>home</a>
+      <a href="apply.html"><i>02</i>apply</a>
+      <a href="scan.html"><i>03</i>scanner</a>
+      <a href="issues.html"><i>04</i>issues</a>
+      <a href="registry.html"><i>05</i>registry</a>
+      <a href="fine-print.html"><i>06</i>fine print</a>
+      <a href="booth.html"><i>07</i>photo booth</a>
+    </nav>
+    <div class="hdr-right mono">
+      <span id="clock">03:12:00 AM</span>
+      <button class="hdr-index" id="burger" aria-label="Open index" aria-expanded="false">index <b>+</b></button>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" aria-hidden="true">
+    <a href="index.html"><i>p.01</i>home</a>
+    <a href="apply.html"><i>p.02</i>apply</a>
+    <a href="scan.html"><i>p.03</i>scanner</a>
+    <a href="issues.html"><i>p.04</i>issues</a>
+    <a href="registry.html"><i>p.05</i>registry</a>
+    <a href="fine-print.html"><i>p.06</i>fine print</a>
+    <a href="booth.html"><i>p.07</i>photo booth</a>
+    <p class="menu-foot mono">HOTMESS PASS® · issue 00 · the identity issue</p>
+  </div>
+
+  <main id="top">
+
+    <!-- ═══════════════════════════════════════════════
+         POSTER 01 · COVER
+         ═══════════════════════════════════════════════ -->
+    <section class="pg pg-cover" id="cover" style="--hold:70vh">
+      <div class="pg-in">
+        <div class="slot fill ht" data-img="img/INDEX/cover.jpg" data-pos="50% 40%" data-alt="Two girls sitting on concrete stairs, white tights with script tattoos, heels and sneakers">
+          <span class="slot-label">cover.jpg<small>full-bleed portrait · vertical or 16:9</small></span>
+        </div>
+        <div class="cv-shade" aria-hidden="true"></div>
+
+        <h1 class="cv-mast" aria-label="Hotmess">
+          <span class="cv-mast-in" id="mast">HOTMESS</span>
+        </h1>
+        <div class="cv-row">
+          <span>ISSUED.</span>
+          <span>UNVERIFIED.</span>
+        </div>
+
+        <p class="cv-line cv-line-1"><b>WHO ARE YOU</b> when nobody's checking?</p>
+        <p class="cv-line cv-line-2"><b>THE IDENTITY ISSUE</b> 00 / 2026</p>
+
+        <svg class="spray spray-cover" viewBox="0 0 620 260" aria-hidden="true">
+          <text x="20" y="200" class="spray-txt">xoxo</text>
+          <g class="drips"></g>
+        </svg>
+
+        <div class="cv-code">
+          <svg class="barcode" data-code="ISSUE 00" data-h="46" data-w="1.4" aria-label="Barcode: ISSUE 00"></svg>
+          <span class="mono">€0.00 · priceless</span>
+        </div>
+
+        <p class="cv-whisper"><i>shhh!!</i> you've been issued. you just didn't sign for it.</p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         POSTER 02 · LOST (party girl blur)
+         ═══════════════════════════════════════════════ -->
+    <section class="pg pg-lost" id="lost" style="--hold:90vh">
+      <div class="pg-in">
+        <div class="lost-photo slot fill" data-img="img/INDEX/lost.jpg" data-alt="A face completely out of focus, smeared lights">
+          <span class="slot-label">lost.jpg<small>colour, will be blurred · vertical</small></span>
+        </div>
+        <span class="lost-side mono">BEI. — 002 · LOST &amp; FOUND</span>
+        <svg class="lost-word" viewBox="0 0 1000 760" preserveAspectRatio="xMidYMid meet" aria-label="Hot mess">
+          <text x="500" y="330" text-anchor="middle">HOT</text>
+          <text x="470" y="690" text-anchor="middle">MESS</text>
+          <text x="905" y="520" text-anchor="middle" class="ast">*</text>
+        </svg>
+        <p class="lost-says" id="lostSays">I lost myself at a party, so I printed a new one.</p>
+        <div class="lost-foot mono"><span>I'M A HOT MESS</span><span>CERTIFIED</span><span>CAN'T YOU SEE THAT</span><span>VALID FOREVER</span></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         POSTER 03 · THE PASS (collage desk)
+         ═══════════════════════════════════════════════ -->
+    <section class="pg pg-desk" id="desk" style="--hold:140vh">
+      <div class="pg-in">
+        <p class="desk-title hand">proof of existence ↓</p>
+        <span class="desk-meta mono">FORM HM-00 · front &amp; back · drag them around</span>
+
+        <!-- ID · BACK -->
+        <article class="idc idc-back" data-desk style="--r:7deg" data-cursor="drag">
+          <div class="idc-dots" aria-hidden="true"></div>
+          <svg class="idc-logo big" viewBox="0 0 600 170" aria-hidden="true"><text x="300" y="132" text-anchor="middle">hotmess</text></svg>
+          <svg class="thorns" viewBox="0 0 600 378" preserveAspectRatio="none" aria-hidden="true"></svg>
+          <div class="idc-code">
+            <svg class="barcode" data-code="U ARE THE PRODUCT" data-h="44" data-w="1.3" aria-label="Scannable barcode: U ARE THE PRODUCT"></svg>
+            <span class="mono">u are the product</span>
+          </div>
+          <span class="tape" style="--r:-12deg; top:-12px; right:16%"></span>
+        </article>
+
+        <!-- ID · FRONT -->
+        <article class="idc idc-front" data-desk style="--r:-4deg" data-cursor="drag">
+          <div class="idc-dots" aria-hidden="true"></div>
+          <svg class="idc-ghost" viewBox="0 0 600 378" preserveAspectRatio="none" aria-hidden="true"></svg>
+          <div class="idc-head mono">
+            <span>ID: #H0TM3SS</span>
+            <span id="idNo">No: #00/∞</span>
+          </div>
+          <div class="idc-brand">
+            <svg class="idc-logo" viewBox="0 0 600 170" aria-hidden="true"><text x="300" y="132" text-anchor="middle">hotmess</text></svg>
+            <span class="idc-sub mono">ID <i></i> PASS</span>
+          </div>
+          <div class="idc-photo">
+            <div class="slot light" data-img="img/INDEX/pass-photo.jpg" data-ratio="4/5" data-pos="58% 45%" data-alt="ID photo: girl in a pink fur hat, grinning">
+              <span class="slot-label">pass-photo.jpg<small>4:5</small></span>
+            </div>
+          </div>
+          <dl class="idc-fields">
+            <div><dt>name:</dt><dd id="idName">__________</dd></div>
+            <div><dt>issued:</dt><dd id="idDate">**/**/26</dd></div>
+            <div><dt>class:</dt><dd id="idClass">HOT MESS<sup>®</sup></dd></div>
+            <div><dt>status:</dt><dd id="idStatus">DELULU <small>(certified)</small></dd></div>
+          </dl>
+          <span class="idc-sig script" id="idSig"></span>
+          <span class="idc-warn">*the manufacture of this feeling is prohibited*</span>
+          <span class="idc-date" id="idLong">October 7, 2026</span>
+          <span class="tape" style="--r:6deg; top:-14px; left:12%"></span>
+        </article>
+
+        <!-- sticky note: your name -->
+        <form class="note" id="nameForm" autocomplete="off" data-desk style="--r:3deg">
+          <span class="tape" style="--r:-4deg; top:-16px; left:30%; width:80px"></span>
+          <label for="nameIn" class="hand">write your name.<br>not your @. ↓</label>
+          <input id="nameIn" class="hand" maxlength="14" placeholder="here ___________">
+          <button type="submit" class="hand">print it →</button>
+        </form>
+
+        <!-- polaroid -->
+        <figure class="polaroid" data-desk style="--r:-9deg">
+          <div class="slot light" data-img="img/INDEX/polaroid.jpg" data-ratio="1/1" data-pos="50% 22%" data-alt="Polaroid: blonde girl in a car with long nails and studded gloves">
+            <span class="slot-label">polaroid.jpg<small>1:1</small></span>
+          </div>
+          <figcaption class="hand">me, probably (3:12am)</figcaption>
+        </figure>
+
+        <svg class="spray spray-desk" viewBox="0 0 620 260" aria-hidden="true">
+          <text x="20" y="200" class="spray-txt">xoxo</text>
+          <g class="drips"></g>
+        </svg>
+        <div class="void-stamp" aria-hidden="true">VOID<small>if healed</small></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         POSTER 04 · YOU ARE THE PRODUCT + MISSING
+         ═══════════════════════════════════════════════ -->
+    <section class="pg pg-product" id="product" style="--hold:110vh">
+      <div class="pg-in">
+        <div class="prod-grid">
+
+          <div class="yatp" id="yatp">
+            <p class="y-you">YOU</p>
+            <p class="y-are">ARE THE</p>
+            <div class="y-code" id="yCode" role="button" tabindex="0" data-cursor="scan" aria-label="Scan the barcode">
+              <svg class="barcode" id="mainCode" data-code="U ARE THE PRODUCT" data-h="200" data-w="3" data-bg="#f4f3ef" aria-label="Scannable Code 128 barcode reading: U ARE THE PRODUCT"></svg>
+              <span class="y-laser" aria-hidden="true"></span>
+              <div class="y-digits mono" aria-hidden="true"><span>0</span><span>51125</span><span>01800</span><span>5</span></div>
+            </div>
+            <p class="y-product">PRODUCT</p>
+            <div class="y-read mono" id="yRead" aria-live="polite">&gt; real code. scan it with your phone, or tap.</div>
+            <span class="y-tap hand" aria-hidden="true">tap to scan ↑</span>
+          </div>
+
+          <div class="missing" id="missing">
+            <p class="m-title">MISSING</p>
+            <div class="m-photo slot light" data-cursor="rub it" data-img="img/INDEX/missing.jpg" data-ratio="6/7" data-face="0.505,0.40,0.15,0.2" data-zoom="1.3" data-alt="Portrait of a girl with pink hair, her face smudged out like a photocopied missing person flyer">
+              <span class="slot-label">missing.jpg<small>portrait · face gets smudged · 6:7</small></span>
+            </div>
+            <p class="m-q">HAVE YOU SEEN THIS <span class="m-strike">PERSON?<svg viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path d="M2 12 C 20 6, 40 15, 60 9 S 90 11, 98 7"/></svg></span><span class="m-scrawl hand">PRODUCT?</span></p>
+            <p class="m-info">LAST SEEN 8TH OCTOBER 2026, 03:12AM.<br>Name: Unknown, Age: Online, Height: 5'6,<br>Hair: Pink, Eyes: Tired/Glitter</p>
+            <p class="m-call">CALL 333-333-333</p>
+            <p class="m-rub hand">rub her face ↑ (double click to reset)</p>
+            <span class="tape" style="--r:4deg; top:-14px; left:38%"></span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         POSTER 05 · VERIFIED (sliced)
+         ═══════════════════════════════════════════════ -->
+    <section class="pg pg-slice" id="slice" style="--hold:140vh">
+      <div class="pg-in">
+        <h2 class="sl-mast">VERIFIED.</h2>
+        <div class="sl-row"><span>EVERYONE.</span><span>CHECKS.</span></div>
+        <div class="sl-frame">
+          <div class="slot slices" id="slicer" data-img="img/INDEX/sliced.jpg" data-ratio="4/5" data-alt="Hand with long pink nails and a heart bracelet on denim jeans, sliced into strips">
+            <span class="slot-label">sliced.jpg<small>colour portrait · 4:5</small></span>
+          </div>
+        </div>
+        <p class="sl-whisper"><i>shhh!!</i> everyone's checking your ID behind your back.</p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         POSTER 06 · IDENTITY (zoom through the word)
+         ═══════════════════════════════════════════════ -->
+    <section class="pg pg-word" id="word" style="--hold:180vh">
+      <div class="pg-in">
+        <h2 class="iw-word" id="iwWord" data-img="img/INDEX/identity.jpg" aria-label="Identity">IDENTITY</h2>
+        <div class="iw-after" id="iwAfter">
+          <p class="iw-small mono">definition, issue 00:</p>
+          <p class="iw-big">is just a <em class="serif">feeling</em><br>with a <span class="spray-word">barcode.</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         CONTENTS (covers the last poster)
+         ═══════════════════════════════════════════════ -->
+    <section class="contents" id="contents">
+      <div class="ct-head">
+        <h2 class="ct-title">CONTENTS</h2>
+        <p class="ct-sub mono">issue 00 · the identity issue · <span class="hand">pick a page, any page</span></p>
+      </div>
+      <ol class="ct-list">
+        <li><a href="apply.html" data-scramble><b>p.02</b><span>APPLY</span><em class="hand">get issued. it hurts a little.</em></a></li>
+        <li><a href="scan.html" data-scramble><b>p.03</b><span>SCANNER</span><em class="hand">point your camera at yourself</em></a></li>
+        <li><a href="issues.html" data-scramble><b>p.04</b><span>ISSUES</span><em class="hand">every issue, every issue we have</em></a></li>
+        <li><a href="registry.html" data-scramble><b>p.05</b><span>REGISTRY</span><em class="hand">lost &amp; found passes</em></a></li>
+        <li><a href="fine-print.html" data-scramble><b>p.06</b><span>FINE PRINT</span><em class="hand">terms of feeling</em></a></li>
+      </ol>
+      <a href="apply.html" class="ct-cta" data-cursor="apply">
+        <svg class="spray spray-cta" viewBox="0 0 900 260" aria-hidden="true">
+          <text x="450" y="190" text-anchor="middle" class="spray-txt">get your pass</text>
+          <g class="drips"></g>
+        </svg>
+      </a>
+    </section>
+
+  </main>
+
+  <!-- ═════════════ FOOTER ═════════════ -->
+  <footer class="ft">
+    <div class="ft-mq" aria-hidden="true">
+      <div class="mq-track" data-speed="-.6"><span>HOTMESS PASS ✦ HOTMESS PASS ✦ </span><span>HOTMESS PASS ✦ HOTMESS PASS ✦ </span></div>
+    </div>
+    <div class="ft-grid">
+      <div class="ft-col">
+        <p class="mono ft-h">the bureau</p>
+        <p>Bureau of Emotional Identity<br>Terminal 03, Floor −1<br>open 24/7, mostly at night<br><a href="#" data-call="333-333-333" class="ft-call">☎ 333-333-333</a></p>
+      </div>
+      <div class="ft-col">
+        <p class="mono ft-h">pages</p>
+        <a href="index.html">home</a><a href="apply.html">apply</a><a href="scan.html">scanner</a><a href="issues.html">issues</a><a href="registry.html">registry</a><a href="fine-print.html">fine print</a><a href="booth.html">photo booth</a>
+      </div>
+      <div class="ft-code">
+        <svg class="barcode" data-code="U ARE THE PRODUCT" data-h="60" data-w="1.6" data-bg="#ecebe6" aria-label="Barcode: U ARE THE PRODUCT"></svg>
+        <p class="mono">not a real document. a real feeling.</p>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <p class="ft-sign">concept, design &amp; code by <span class="script">ghostly.grl</span> ♥</p>
+      <p class="mono">© 2026 HOTMESS PASS® · all feelings reserved</p>
+      <a href="#top" class="mono ft-top" data-scrollto>back to the top ↑</a>
+    </div>
+  </footer>
+
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"><span class="cursor-ring"></span><span class="cursor-label" id="cursorLabel"></span></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsbarcode/3.11.6/JsBarcode.all.min.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/eggs.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

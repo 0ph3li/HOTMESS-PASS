@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registry — HOTMESS PASS®</title>
+  <meta name="description" content="The registry of lost passes, missing selves and unclaimed feelings.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter+Tight:ital,wght@0,400;0,500;0,700;0,800;0,900;1,500;1,800&family=Instrument+Serif:ital@0;1&family=Pinyon+Script&family=Reenie+Beanie&family=Sedgwick+Ave+Display&family=Silkscreen&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/core.css">
+  <link rel="stylesheet" href="css/registry.css">
+</head>
+<body data-page="registry">
+
+  <!-- ═════════════ HEADER ═════════════ -->
+  <header class="hdr" id="hdr">
+    <a href="index.html" class="hdr-logo">HOTMESS PASS<sup>®</sup></a>
+    <nav class="hdr-nav" aria-label="Main">
+      <a href="index.html"><i>01</i>home</a>
+      <a href="apply.html"><i>02</i>apply</a>
+      <a href="scan.html"><i>03</i>scanner</a>
+      <a href="issues.html"><i>04</i>issues</a>
+      <a href="registry.html" class="is-active" aria-current="page"><i>05</i>registry</a>
+      <a href="fine-print.html"><i>06</i>fine print</a>
+      <a href="booth.html"><i>07</i>photo booth</a>
+    </nav>
+    <div class="hdr-right mono">
+      <span id="clock">03:12:00 AM</span>
+      <button class="hdr-index" id="burger" aria-label="Open index" aria-expanded="false">index <b>+</b></button>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" aria-hidden="true">
+    <a href="index.html"><i>p.01</i>home</a>
+    <a href="apply.html"><i>p.02</i>apply</a>
+    <a href="scan.html"><i>p.03</i>scanner</a>
+    <a href="issues.html"><i>p.04</i>issues</a>
+    <a href="registry.html"><i>p.05</i>registry</a>
+    <a href="fine-print.html"><i>p.06</i>fine print</a>
+    <a href="booth.html"><i>p.07</i>photo booth</a>
+    <p class="menu-foot mono">HOTMESS PASS® · issue 00 · the identity issue</p>
+  </div>
+
+  <main id="top">
+
+    <!-- 01 · THE WALL TITLE -->
+    <section class="rg-hero">
+      <h1 class="rg-mast" aria-label="Registry."><span id="rgMast">REGISTRY.</span></h1>
+      <div class="rg-row"><span>LOST &amp; FOUND</span><span>UNCLAIMED FEELINGS</span><span>EST. WHENEVER</span></div>
+      <div class="rg-stats">
+        <p><b data-count="412">0</b><span class="mono">things lost</span></p>
+        <p><b data-count="37">0</b><span class="mono">things found</span></p>
+        <p><b id="claimedN">0</b><span class="mono">claimed by you</span></p>
+      </div>
+      <figure class="mug" data-cursor="booked">
+        <span class="tape" style="--r:-6deg; top:-14px; left:34%"></span>
+        <div class="slot light" data-img="img/REGISTRY/photo.jpg" data-ratio="4/5" data-pos="50% 30%" data-alt="Mugshot of a girl holding a booking sign, in front of a height chart">
+          <span class="slot-label">photo.jpg<small>mugshot · 4:5</small></span>
+        </div>
+        <figcaption class="mono"><b>BOOKED · 03:12AM</b><span>charge: being too much</span></figcaption>
+      </figure>
+      <p class="rg-note hand">tear a tab. call the number.<br>someone (something) will answer.</p>
+    </section>
+
+    <!-- 02 · TOOLBAR + WALL -->
+    <section class="rg-wall-sec" id="wall">
+      <div class="rg-tools">
+        <label class="rg-search"><span class="mono">search the wall</span><input id="search" class="mono" placeholder="e.g. dignity, earring, delulu" autocomplete="off"></label>
+        <div class="rg-chips" role="radiogroup" aria-label="Filter">
+          <button type="button" class="chip is-on" data-f="all" role="radio" aria-checked="true">all</button>
+          <button type="button" class="chip" data-f="missing" role="radio" aria-checked="false">missing</button>
+          <button type="button" class="chip" data-f="found" role="radio" aria-checked="false">found</button>
+          <button type="button" class="chip" data-f="pass" role="radio" aria-checked="false">lost passes</button>
+          <button type="button" class="chip" data-f="feeling" role="radio" aria-checked="false">feelings</button>
+          <button type="button" class="chip" data-f="yours" role="radio" aria-checked="false">yours</button>
+        </div>
+        <a href="#report" class="rg-report mono" data-scrollto>+ report a loss</a>
+      </div>
+      <div class="wall" id="wallBox" aria-live="polite"></div>
+      <p class="wall-empty hand" id="wallEmpty" hidden>nothing here. either it's found, or it never existed.</p>
+    </section>
+
+    <!-- 03 · REPORT A LOSS -->
+    <section class="rg-report-sec torn-top" id="report" style="--torn:var(--paper)">
+      <div class="rp-grid">
+        <form class="rp-form" id="rpForm" autocomplete="off">
+          <p class="mono rp-k">form LF-03 · report a loss</p>
+          <h2 class="rp-title">lost <em class="serif">something?</em></h2>
+          <fieldset class="rp-type">
+            <legend class="mono">what kind of loss</legend>
+            <label><input type="radio" name="t" value="missing" checked><span>missing</span></label>
+            <label><input type="radio" name="t" value="found"><span>found</span></label>
+            <label><input type="radio" name="t" value="feeling"><span>unclaimed feeling</span></label>
+          </fieldset>
+          <label class="rp-field"><span class="mono">what</span><input id="rpWhat" maxlength="40" placeholder="my sense of humour"></label>
+          <label class="rp-field"><span class="mono">last seen / since</span><input id="rpWhere" maxlength="44" placeholder="his car, friday, 2AM"></label>
+          <label class="rp-photo"><span class="mono">add a photo (optional, stays on this device)</span><input type="file" id="rpPhoto" accept="image/*"></label>
+          <button type="submit" class="rp-post mono">paste it on the wall →</button>
+          <p class="rp-small mono">your flyers live only in this browser. nobody else will see them. (that's the saddest part.)</p>
+        </form>
+        <div class="rp-preview" aria-label="Preview of your flyer"><div id="rpPrev"></div></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═════════════ FOOTER ═════════════ -->
+  <footer class="ft">
+    <div class="ft-mq" aria-hidden="true">
+      <div class="mq-track" data-speed="-.6"><span>HOTMESS PASS ✦ HOTMESS PASS ✦ </span><span>HOTMESS PASS ✦ HOTMESS PASS ✦ </span></div>
+    </div>
+    <div class="ft-grid">
+      <div class="ft-col">
+        <p class="mono ft-h">the bureau</p>
+        <p>Bureau of Emotional Identity<br>Terminal 03, Floor −1<br>open 24/7, mostly at night<br><a href="#" data-call="333-333-333" class="ft-call">☎ 333-333-333</a></p>
+      </div>
+      <div class="ft-col">
+        <p class="mono ft-h">pages</p>
+        <a href="index.html">home</a><a href="apply.html">apply</a><a href="scan.html">scanner</a><a href="issues.html">issues</a><a href="registry.html">registry</a><a href="fine-print.html">fine print</a><a href="booth.html">photo booth</a>
+      </div>
+      <div class="ft-code">
+        <svg class="barcode" data-code="U ARE THE PRODUCT" data-h="60" data-w="1.6" data-bg="#ecebe6" aria-label="Barcode: U ARE THE PRODUCT"></svg>
+        <p class="mono">not a real document. a real feeling.</p>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <p class="ft-sign">concept, design &amp; code by <span class="script">ghostly.grl</span> ♥</p>
+      <p class="mono">© 2026 HOTMESS PASS® · all feelings reserved</p>
+      <a href="#top" class="mono ft-top" data-scrollto>back to the top ↑</a>
+    </div>
+  </footer>
+
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"><span class="cursor-ring"></span><span class="cursor-label" id="cursorLabel"></span></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsbarcode/3.11.6/JsBarcode.all.min.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/eggs.js"></script>
+  <script src="js/registry.js"></script>
+</body>
+</html>
